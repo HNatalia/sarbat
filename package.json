@@ -1,0 +1,22 @@
+{
+  "name": "sarbat",
+  "version": "1.0.0",
+  "description": "sample landing page",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HNatalia/sarbat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HNatalia/sarbat/issues"
+  },
+  "homepage": "https://github.com/HNatalia/sarbat#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
