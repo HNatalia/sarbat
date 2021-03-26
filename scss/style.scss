@@ -1,10 +1,6 @@
 @import 'reset';
 @import 'variables';
-
-body {
-  background-color: $bg-color;
-}
-
-h1 {
-  color: $font-color;
-}
+@import 'general';
+@import 'fonts';
+@import 'mixins';
+@import 'sections/jumbotron';

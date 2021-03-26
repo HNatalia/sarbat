@@ -12,5 +12,116 @@ li {
 body {
   background-color: #121212; }
 
-h1 {
-  color: #f7f7f7; }
+h1, h2, h3, p {
+  -webkit-font-smoothing: antialiased; }
+
+@font-face {
+  font-family: 'brandon-grotesque';
+  src: url("/dist/assets/fonts/Brandon_blk.otf"); }
+
+header {
+  background-image: url(/dist/assets/img/jumbotron.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  height: 100vh; }
+  header .content {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 40px; }
+    header .content nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      header .content nav .logo {
+        max-width: 86px;
+        width: 100%;
+        background-color: #121212; }
+      header .content nav .menu {
+        width: 45px;
+        height: 45px;
+        border: 2px solid #f7f7f7;
+        cursor: pointer;
+        background-color: #121212;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        header .content nav .menu .line {
+          width: 26px;
+          height: 4px;
+          background-color: #f7f7f7;
+          position: relative; }
+          header .content nav .menu .line::before, header .content nav .menu .line::after {
+            position: absolute;
+            content: '';
+            width: 26px;
+            height: 4px;
+            background-color: #f7f7f7; }
+          header .content nav .menu .line::before {
+            top: -8px; }
+          header .content nav .menu .line::after {
+            top: 8px; }
+    header .content .main-content {
+      height: 85%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      header .content .main-content .caption {
+        background-color: #121212;
+        width: 55%;
+        padding: 40px 20px 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        @media screen and (max-width: 720px) {
+          header .content .main-content .caption {
+            width: 70%; } }
+        @media screen and (max-width: 580px) {
+          header .content .main-content .caption {
+            width: 100%; } }
+        header .content .main-content .caption h1 {
+          font-family: 'brandon-grotesque', sans-serif;
+          font-weight: 300;
+          text-transform: uppercase;
+          font-size: 55px;
+          color: #f7f7f7; }
+          @media screen and (max-width: 940px) {
+            header .content .main-content .caption h1 {
+              font-size: 40px; } }
+          @media screen and (max-width: 390px) {
+            header .content .main-content .caption h1 {
+              font-size: 28px; } }
+        header .content .main-content .caption .desc, header .content .main-content .caption .creator {
+          font-family: 'Noto Sans', sans-serif;
+          color: #f7f7f7; }
+        header .content .main-content .caption .desc {
+          font-size: 20px;
+          margin-top: -8px; }
+          @media screen and (max-width: 390px) {
+            header .content .main-content .caption .desc {
+              font-size: 14px; } }
+        header .content .main-content .caption .creator {
+          font-size: 14px;
+          position: relative;
+          margin-top: 37px;
+          margin-bottom: 40px; }
+          @media screen and (max-width: 390px) {
+            header .content .main-content .caption .creator {
+              font-size: 10px; } }
+        header .content .main-content .caption .creator::before {
+          position: absolute;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background-color: #f7f7f7;
+          top: -10px; }
+        header .content .main-content .caption .mouse-icon {
+          max-width: 20px;
+          width: 100%;
+          transform: translateY(0);
+          animation: scroll-down 2s linear alternate infinite; }
+
+@keyframes scroll-down {
+  to {
+    transform: translateY(10px); } }
