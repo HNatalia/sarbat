@@ -2,6 +2,10 @@ body {
   background-color: $bg-color;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, h4, p, a, button {
   -webkit-font-smoothing: antialiased;
+}
+
+h2, h3, h4, a, button {
+  font-family: 'Montserrat', sans-serif;
 }

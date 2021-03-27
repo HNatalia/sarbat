@@ -1,0 +1,13 @@
+@import 'mixins';
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.divider {
+  background-image: url('/dist/assets/img/divider.png');
+  @include bg-cover;
+  height: 2px;
+  margin-bottom: 30px;
+}
