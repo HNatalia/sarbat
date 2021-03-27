@@ -369,7 +369,7 @@ header {
       left: 65px; }
 
 #clients {
-  background-image: url("../assets/img/clients-bg.png");
+  background-image: url(../assets/img/clients-bg.png);
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover; }
