@@ -35,7 +35,7 @@ h2, h3, h4, a, button {
   margin-bottom: 30px; }
 
 header {
-  background-image: url(/dist/assets/img/jumbotron.png);
+  background-image: url(./assets/img/jumbotron.png);
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
