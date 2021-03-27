@@ -379,28 +379,19 @@ header {
   #clients .wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 70px; }
-    #clients .wrapper a img:nth-child(1), #clients .wrapper a img:nth-child(8) {
-      max-width: 178px;
-      width: 100%; }
-    #clients .wrapper a img:nth-child(2) {
-      max-width: 162px;
-      width: 100%; }
-    #clients .wrapper a img:nth-child(3) {
-      max-width: 150px;
-      width: 100%; }
-    #clients .wrapper a img:nth-child(4) {
-      max-width: 140px;
-      width: 100%; }
-    #clients .wrapper a img:nth-child(5) {
-      max-width: 162px;
-      width: 100%; }
-    #clients .wrapper a img:nth-child(6) {
-      max-width: 127px;
-      width: 100%; }
-    #clients .wrapper a img:nth-child(7) {
-      max-width: 166px;
-      width: 100%; }
+    grid-column-gap: 40px;
+    grid-row-gap: 70px; }
+    @media screen and (max-width: 990px) {
+      #clients .wrapper {
+        grid-template-columns: repeat(3, 1fr); } }
+    @media screen and (max-width: 720px) {
+      #clients .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 40px; } }
+    @media screen and (max-width: 580px) {
+      #clients .wrapper {
+        grid-template-columns: 1fr;
+        justify-content: center; } }
 
 .container {
   padding: 120px 0; }
