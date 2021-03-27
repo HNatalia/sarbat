@@ -14,7 +14,7 @@
     }
   
     .picture {
-      background-image: url('/dist/assets/img/lorempic.png');
+      background-image: url('../assets/img/lorempic.png');
       position: relative;
       @include bg-cover;
   
@@ -90,7 +90,7 @@
   
       .hover {
         position: absolute;
-        background-image: url('/dist/assets/img/pt-img-bg.png');
+        background-image: url('../assets/img/pt-img-bg.png');
         width: 100%;
         bottom: 0;
         padding: 27px 27px 15px;
@@ -142,7 +142,7 @@
 
   .more {
     width: 60%;
-    background-image: url('/dist/assets/img/more-btn-bg.png');
+    background-image: url('../assets/img/more-btn-bg.png');
     border: none;
     color: $font-color;
     text-transform: uppercase;

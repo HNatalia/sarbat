@@ -6,7 +6,7 @@
 }
 
 .divider {
-  background-image: url('/dist/assets/img/divider.png');
+  background-image: url('../assets/img/divider.png');
   @include bg-cover;
   height: 2px;
   margin-bottom: 30px;

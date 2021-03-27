@@ -27,7 +27,7 @@ h2, h3, h4, a, button {
   margin: 0 auto; }
 
 .divider {
-  background-image: url("/dist/assets/img/divider.png");
+  background-image: url("../assets/img/divider.png");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
@@ -35,7 +35,7 @@ h2, h3, h4, a, button {
   margin-bottom: 30px; }
 
 header {
-  background-image: url(./assets/img/jumbotron.png);
+  background-image: url(../assets/img/jumbotron.png);
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
@@ -196,7 +196,7 @@ header {
       #portfolio .grid {
         grid-template-columns: repeat(2, 1fr); } }
     #portfolio .grid .picture {
-      background-image: url("/dist/assets/img/lorempic.png");
+      background-image: url("../assets/img/lorempic.png");
       position: relative;
       background-repeat: no-repeat;
       background-position: 0 0;
@@ -262,7 +262,7 @@ header {
             grid-column: 2 / 3; } }
       #portfolio .grid .picture .hover {
         position: absolute;
-        background-image: url("/dist/assets/img/pt-img-bg.png");
+        background-image: url("../assets/img/pt-img-bg.png");
         width: 100%;
         bottom: 0;
         padding: 27px 27px 15px;
@@ -300,7 +300,7 @@ header {
         opacity: 1; }
   #portfolio .more {
     width: 60%;
-    background-image: url("/dist/assets/img/more-btn-bg.png");
+    background-image: url("../assets/img/more-btn-bg.png");
     border: none;
     color: #f7f7f7;
     text-transform: uppercase;
@@ -465,3 +465,6 @@ header {
         font-weight: 100;
         top: 6px;
         left: 65px; }
+
+#testimonials {
+  background-color: #000000; }
