@@ -1,0 +1,33 @@
+#skills {
+  background-color: $black-color;
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+    .skill {
+      h3 {
+        color: $font-color;
+      }
+  
+      .level {
+        font-size: 50px;
+        position: relative;
+        margin-left: 15px;
+  
+        &::after {
+          position: absolute;
+          content: '%';
+          color: $gray-color;
+          font-family: 'Noto Sans', sans-serif;
+          font-style: italic;
+          font-size: 20px;
+          -webkit-font-smoothing: antialiased;
+          font-weight: 100;
+          top: 6px;
+          left: 65px;
+        }
+      }
+    }
+  }
+}
