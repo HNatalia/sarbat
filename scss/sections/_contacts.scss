@@ -48,7 +48,10 @@
   }
 }
 
-.container {
+.contacts-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 130px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
@@ -110,7 +113,7 @@
 
     button {
       border: none;
-      background-image: url('/dist/assets/img/button-bg.png');
+      background-image: url(../assets/img/button-bg.png);
       @include bg-cover;
       color: $white-color;
       text-transform: uppercase;

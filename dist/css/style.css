@@ -20,7 +20,7 @@ h2, h3, h4, a, button {
 
 @font-face {
   font-family: 'brandon-grotesque';
-  src: url("/dist/assets/fonts/Brandon_blk.otf"); }
+  src: url(../assets/fonts/Brandon_blk.otf); }
 
 .container {
   width: 80%;
@@ -28,9 +28,8 @@ h2, h3, h4, a, button {
 
 .divider {
   background-image: url("../assets/img/divider.png");
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
   height: 2px;
   margin-bottom: 30px; }
 
@@ -568,51 +567,54 @@ header {
   .social .behance a img {
     width: 28px; }
 
-.container {
+.contacts-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 130px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px; }
   @media screen and (max-width: 940px) {
-    .container {
+    .contacts-wrapper {
       grid-template-columns: 1fr; } }
-  .container h3 {
+  .contacts-wrapper h3 {
     color: #f7f7f7;
     margin-bottom: 20px; }
-  .container p {
+  .contacts-wrapper p {
     font-family: 'Noto Sans', sans-serif;
     color: #757575;
     font-size: 14px; }
-  .container .contact {
+  .contacts-wrapper .contact {
     display: flex;
     margin-top: 30px; }
     @media screen and (max-width: 470px) {
-      .container .contact {
+      .contacts-wrapper .contact {
         flex-direction: column; } }
-    .container .contact .mail {
+    .contacts-wrapper .contact .mail {
       margin: 0 20px; }
       @media screen and (max-width: 470px) {
-        .container .contact .mail {
+        .contacts-wrapper .contact .mail {
           margin: 20px 0 0; } }
-  .container form .row {
+  .contacts-wrapper form .row {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column; }
-    .container form .row label {
+    .contacts-wrapper form .row label {
       font-family: 'Noto Sans', sans-serif;
       color: #757575;
       font-size: 14px;
       font-style: italic; }
-    .container form .row input, .container form .row textarea {
+    .contacts-wrapper form .row input, .contacts-wrapper form .row textarea {
       border: none;
       outline: none;
       background-color: transparent;
       border-bottom: 1px solid #757575;
       color: #f7f7f7; }
-    .container form .row textarea {
+    .contacts-wrapper form .row textarea {
       resize: none; }
-  .container form button {
+  .contacts-wrapper form button {
     border: none;
-    background-image: url("/dist/assets/img/button-bg.png");
+    background-image: url(../assets/img/button-bg.png);
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: cover;
@@ -623,7 +625,7 @@ header {
     cursor: pointer; }
 
 footer {
-  background-image: url("/dist/assets/img/footer-bg.png");
+  background-image: url(../assets/img/footer-bg.png);
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
