@@ -1,0 +1,16 @@
+footer {
+  background-image: url('/dist/assets/img/footer-bg.png');
+  @include bg-cover;
+  text-align: center;
+  padding: 45px;
+
+  p {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+    color: $font-color;
+
+    span {
+      font-style: italic;
+    }
+  }
+}
