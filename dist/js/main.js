@@ -1,6 +1,5 @@
 (() => {
   const body = document.querySelector('body');
-  console.log(body)
   const loader = document.querySelector('.loader-container');
   const page = document.querySelector('.page');
 
@@ -28,8 +27,23 @@
     });
   }
 
+  const fadeIn = selector => {
+    const container = document.querySelector(selector);
+    const size = container.getBoundingClientRect().top;
+    const scrollPosition = window.innerHeight * 0.5;
+
+    if (scrollPosition > size) {
+      container.classList.add('fadeIn');
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     loaded();
     toggle();
+
+    window.addEventListener('scroll', () => {
+      fadeIn('.grid');
+      fadeIn('.wrapper')
+    })
   })
 })();

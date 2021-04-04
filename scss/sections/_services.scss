@@ -19,6 +19,9 @@
     }
 
     .item {
+      opacity: 0;
+      transition: 1s;
+      
       img {
         max-width: 44px;
         max-height: 38px;
@@ -51,6 +54,12 @@
         img {
           max-width: 40px;
         }
+      }
+    }
+
+    &.fadeIn {
+      .item {
+        opacity: 1;
       }
     }
   }
