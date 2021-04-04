@@ -53,6 +53,38 @@ header {
         max-width: 86px;
         width: 100%;
         background-color: #121212; }
+      header .content nav .menu-list {
+        background-color: #121212;
+        width: 80%;
+        opacity: 0;
+        transition: 1s; }
+        @media screen and (max-width: 940px) {
+          header .content nav .menu-list {
+            width: 100vw;
+            position: absolute;
+            height: calc(100vh + 1px);
+            top: 0;
+            left: 0;
+            z-index: 1; } }
+        header .content nav .menu-list ul {
+          display: flex;
+          width: 100%;
+          justify-content: space-evenly; }
+          @media screen and (max-width: 940px) {
+            header .content nav .menu-list ul {
+              flex-direction: column;
+              justify-content: center;
+              text-align: center;
+              transform: translateY(40%); } }
+          header .content nav .menu-list ul li {
+            padding: 10px 0;
+            margin: 0 5px; }
+            header .content nav .menu-list ul li a {
+              font-family: 'Noto Sans', sans-serif;
+              font-style: italic;
+              color: #f7f7f7; }
+        header .content nav .menu-list.open {
+          opacity: 1; }
       header .content nav .menu {
         width: 45px;
         height: 45px;
@@ -67,6 +99,9 @@ header {
           height: 4px;
           background-color: #f7f7f7;
           position: relative; }
+          @media screen and (max-width: 940px) {
+            header .content nav .menu .line {
+              z-index: 1; } }
           header .content nav .menu .line::before, header .content nav .menu .line::after {
             position: absolute;
             content: '';
@@ -77,6 +112,14 @@ header {
             top: -8px; }
           header .content nav .menu .line::after {
             top: 8px; }
+          header .content nav .menu .line.close {
+            transform: rotate(45deg);
+            transition: 1s; }
+            header .content nav .menu .line.close::before {
+              display: none; }
+            header .content nav .menu .line.close::after {
+              transform: rotate(88deg);
+              top: 0; }
     header .content .main-content {
       height: 85%;
       display: flex;
@@ -556,7 +599,7 @@ header {
     .social div:last-child {
       border-right: none; }
     .social div:hover {
-      background-image: url("/dist/assets/img/social-hover.png");
+      background-image: url(../assets/img/social-hover.png);
       background-size: contain; }
   .social .facebook a img {
     width: 12px; }
