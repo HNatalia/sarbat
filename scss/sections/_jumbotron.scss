@@ -23,7 +23,7 @@ header {
         background-color: $bg-color;
         width: 80%;
         opacity: 0;
-        transition: 1s;
+        transition: all .300s ease-in-out;
         @media screen and (max-width: 940px) {
           width: 100vw;
           position: absolute;
@@ -31,6 +31,7 @@ header {
           top: 0;
           left: 0;
           z-index: 1;
+          clip-path: circle(2%);
         }
 
         ul {
@@ -52,12 +53,20 @@ header {
               font-family: 'Noto Sans', sans-serif;
               font-style: italic;
               color: $font-color;
+
+              &:hover {
+                background: -webkit-linear-gradient(0.1turn, #78c6d3, #f11a77);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
             }
           }
         }
 
         &.open {
           opacity: 1;
+          clip-path: circle(100%);
+          visibility: visible;
         }
       }
 
@@ -74,6 +83,7 @@ header {
           height: 4px;
           background-color: $font-color;
           position: relative;
+          transition: .100s;
           @media screen and (max-width: 940px) {
             z-index: 1;
           }
@@ -84,10 +94,12 @@ header {
             width: 26px;
             height: 4px;
             background-color: $font-color;
+            transition: .300s;
           }
 
           &::before {
             top: -8px;
+            opacity: 1;
           }
 
           &::after {
@@ -95,15 +107,15 @@ header {
           }
 
           &.close {
-            transform: rotate(45deg);
-            transition: 1s;
+            background: transparent;
 
             &::before {
-              display: none;
+              transform: rotate(-45deg);
+              top: 0;
             }
 
             &::after {
-              transform: rotate(88deg);
+              transform: rotate(45deg);
               top: 0;
             }
           }

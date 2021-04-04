@@ -57,7 +57,7 @@ header {
         background-color: #121212;
         width: 80%;
         opacity: 0;
-        transition: 1s; }
+        transition: all .300s ease-in-out; }
         @media screen and (max-width: 940px) {
           header .content nav .menu-list {
             width: 100vw;
@@ -65,7 +65,8 @@ header {
             height: calc(100vh + 1px);
             top: 0;
             left: 0;
-            z-index: 1; } }
+            z-index: 1;
+            clip-path: circle(2%); } }
         header .content nav .menu-list ul {
           display: flex;
           width: 100%;
@@ -83,8 +84,14 @@ header {
               font-family: 'Noto Sans', sans-serif;
               font-style: italic;
               color: #f7f7f7; }
+              header .content nav .menu-list ul li a:hover {
+                background: -webkit-linear-gradient(0.1turn, #78c6d3, #f11a77);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; }
         header .content nav .menu-list.open {
-          opacity: 1; }
+          opacity: 1;
+          clip-path: circle(100%);
+          visibility: visible; }
       header .content nav .menu {
         width: 45px;
         height: 45px;
@@ -98,7 +105,8 @@ header {
           width: 26px;
           height: 4px;
           background-color: #f7f7f7;
-          position: relative; }
+          position: relative;
+          transition: .100s; }
           @media screen and (max-width: 940px) {
             header .content nav .menu .line {
               z-index: 1; } }
@@ -107,18 +115,20 @@ header {
             content: '';
             width: 26px;
             height: 4px;
-            background-color: #f7f7f7; }
+            background-color: #f7f7f7;
+            transition: .300s; }
           header .content nav .menu .line::before {
-            top: -8px; }
+            top: -8px;
+            opacity: 1; }
           header .content nav .menu .line::after {
             top: 8px; }
           header .content nav .menu .line.close {
-            transform: rotate(45deg);
-            transition: 1s; }
+            background: transparent; }
             header .content nav .menu .line.close::before {
-              display: none; }
+              transform: rotate(-45deg);
+              top: 0; }
             header .content nav .menu .line.close::after {
-              transform: rotate(88deg);
+              transform: rotate(45deg);
               top: 0; }
     header .content .main-content {
       height: 85%;
