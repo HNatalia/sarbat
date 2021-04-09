@@ -626,7 +626,8 @@ header {
   .container .cards-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px; }
+    grid-gap: 30px;
+    overflow: hidden; }
     @media screen and (max-width: 1000px) {
       .container .cards-wrapper {
         grid-template-columns: repeat(2, 1fr); } }
@@ -637,7 +638,8 @@ header {
       border: 2px solid #757575;
       padding: 30px;
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      transition: 1s; }
       .container .cards-wrapper .card h3, .container .cards-wrapper .card h4, .container .cards-wrapper .card .hightlight, .container .cards-wrapper .card a {
         color: #f7f7f7; }
       .container .cards-wrapper .card h3 {
@@ -670,6 +672,20 @@ header {
         align-self: center;
         font-size: 12px;
         text-transform: uppercase; }
+        .container .cards-wrapper .card a:hover {
+          background: -webkit-linear-gradient(0.1turn, #78c6d3, #f11a77);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; }
+      .container .cards-wrapper .card:nth-child(1) {
+        transform: translateY(100%); }
+      .container .cards-wrapper .card:nth-child(2) {
+        transform: translateY(-100%); }
+      .container .cards-wrapper .card:nth-child(3) {
+        transform: translateY(100%); }
+      .container .cards-wrapper .card:nth-child(4) {
+        transform: translateY(-100%); }
+    .container .cards-wrapper.fadeIn .card {
+      transform: translateY(0%); }
 
 #skills {
   background-color: #000000; }
@@ -706,33 +722,45 @@ header {
       cursor: pointer; }
     #testimonials .container .wrapper {
       width: 90%; }
-      #testimonials .container .wrapper .review {
-        display: flex;
-        align-items: center; }
-        @media screen and (max-width: 390px) {
-          #testimonials .container .wrapper .review {
-            flex-direction: column; } }
-        #testimonials .container .wrapper .review .picture img {
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          margin-bottom: 15px;
-          margin-right: 30px; }
-          @media screen and (max-width: 390px) {
-            #testimonials .container .wrapper .review .picture img {
-              margin-right: 0; } }
-        #testimonials .container .wrapper .review .picture .divider {
-          width: 100px; }
-        #testimonials .container .wrapper .review .info {
-          color: #ffffff; }
-          #testimonials .container .wrapper .review .info p {
-            font-family: 'Noto Sans', sans-serif;
-            font-style: italic;
-            font-size: 14px;
-            margin-top: 25px;
-            margin-bottom: 30px; }
-          #testimonials .container .wrapper .review .info .name {
-            font-weight: 600; }
+      #testimonials .container .wrapper .viewport {
+        width: 100%;
+        overflow: hidden; }
+        #testimonials .container .wrapper .viewport .items {
+          width: 100%;
+          display: flex;
+          transition: 1s; }
+          #testimonials .container .wrapper .viewport .items .review-page {
+            display: flex;
+            width: 100%;
+            grid-gap: 20px; }
+            #testimonials .container .wrapper .viewport .items .review-page .review {
+              display: flex;
+              align-items: center;
+              width: 50vw; }
+              @media screen and (max-width: 390px) {
+                #testimonials .container .wrapper .viewport .items .review-page .review {
+                  flex-direction: column; } }
+              #testimonials .container .wrapper .viewport .items .review-page .review .picture img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin-bottom: 15px;
+                margin-right: 30px; }
+                @media screen and (max-width: 390px) {
+                  #testimonials .container .wrapper .viewport .items .review-page .review .picture img {
+                    margin-right: 0; } }
+              #testimonials .container .wrapper .viewport .items .review-page .review .picture .divider {
+                width: 100px; }
+              #testimonials .container .wrapper .viewport .items .review-page .review .info {
+                color: #ffffff; }
+                #testimonials .container .wrapper .viewport .items .review-page .review .info p {
+                  font-family: 'Noto Sans', sans-serif;
+                  font-style: italic;
+                  font-size: 14px;
+                  margin-top: 25px;
+                  margin-bottom: 30px; }
+                #testimonials .container .wrapper .viewport .items .review-page .review .info .name {
+                  font-weight: 600; }
 
 .wrapper .post {
   display: flex;

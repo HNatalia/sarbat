@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
+    overflow: hidden;
     @media screen and (max-width: 1000px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -17,7 +18,7 @@
       padding: 30px;
       display: flex;
       flex-direction: column;
-
+      transition: 1s;
 
       h3, h4, .hightlight, a {
         color: $font-color;
@@ -63,6 +64,34 @@
         align-self: center;
         font-size: 12px;
         text-transform: uppercase;
+
+        &:hover {
+          background: -webkit-linear-gradient(0.1turn, #78c6d3, #f11a77);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      &:nth-child(1) {
+        transform: translateY(100%);
+      }
+
+      &:nth-child(2) {
+        transform: translateY(-100%);
+      }
+
+      &:nth-child(3) {
+        transform: translateY(100%);
+      }
+
+      &:nth-child(4) {
+        transform: translateY(-100%);
+      }
+    }
+
+    &.fadeIn {
+      .card {
+        transform: translateY(0%);
       }
     }
   }
