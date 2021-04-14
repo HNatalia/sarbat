@@ -689,27 +689,40 @@ header {
 
 #skills {
   background-color: #000000; }
-  #skills .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; }
-    #skills .wrapper .skill h3 {
-      color: #f7f7f7; }
-    #skills .wrapper .skill .level {
-      font-size: 50px;
-      position: relative;
-      margin-left: 15px; }
-      #skills .wrapper .skill .level::after {
-        position: absolute;
-        content: '%';
-        color: #757575;
-        font-family: 'Noto Sans', sans-serif;
-        font-style: italic;
-        font-size: 20px;
-        -webkit-font-smoothing: antialiased;
-        font-weight: 100;
-        top: 6px;
-        left: 65px; }
+  #skills .container {
+    padding-bottom: 70px; }
+    #skills .container .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      #skills .container .wrapper .skill {
+        transition: 1s;
+        opacity: 0; }
+        #skills .container .wrapper .skill h3 {
+          color: #f7f7f7; }
+        #skills .container .wrapper .skill .level {
+          font-size: 50px;
+          position: relative;
+          margin-left: 15px; }
+          #skills .container .wrapper .skill .level::after {
+            position: absolute;
+            content: '%';
+            color: #757575;
+            font-family: 'Noto Sans', sans-serif;
+            font-style: italic;
+            font-size: 20px;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 100;
+            top: 6px;
+            left: 65px; }
+        #skills .container .wrapper .skill:nth-child(2) {
+          transition-delay: .3s; }
+        #skills .container .wrapper .skill:nth-child(3) {
+          transition-delay: .6s; }
+        #skills .container .wrapper .skill:nth-child(4) {
+          transition-delay: .9s; }
+      #skills .container .wrapper.fadeIn .skill {
+        opacity: 1; }
 
 #testimonials {
   background-color: #000000; }

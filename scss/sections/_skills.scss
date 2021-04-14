@@ -1,31 +1,57 @@
 #skills {
   background-color: $black-color;
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
   
-    .skill {
-      h3 {
-        color: $font-color;
+  .container {
+    padding-bottom: 70px;
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    
+      .skill {
+        transition: 1s;
+        opacity: 0;
+
+        h3 {
+          color: $font-color;
+        }
+    
+        .level {
+          font-size: 50px;
+          position: relative;
+          margin-left: 15px;
+    
+          &::after {
+            position: absolute;
+            content: '%';
+            color: $gray-color;
+            font-family: 'Noto Sans', sans-serif;
+            font-style: italic;
+            font-size: 20px;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 100;
+            top: 6px;
+            left: 65px;
+          }
+        }
+
+        &:nth-child(2) {
+          transition-delay: .3s;
+        }
+
+        &:nth-child(3) {
+          transition-delay: .6s;
+        }
+
+        &:nth-child(4) {
+          transition-delay: .9s;
+        }
       }
-  
-      .level {
-        font-size: 50px;
-        position: relative;
-        margin-left: 15px;
-  
-        &::after {
-          position: absolute;
-          content: '%';
-          color: $gray-color;
-          font-family: 'Noto Sans', sans-serif;
-          font-style: italic;
-          font-size: 20px;
-          -webkit-font-smoothing: antialiased;
-          font-weight: 100;
-          top: 6px;
-          left: 65px;
+
+      &.fadeIn {
+        .skill {
+          opacity: 1;
         }
       }
     }
