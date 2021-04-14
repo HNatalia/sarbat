@@ -388,10 +388,11 @@ header {
         .container .grid .item h3::before {
           position: absolute;
           content: '';
-          width: 70px;
+          width: 0px;
           height: 2px;
           background-color: #757575;
-          top: -30px; }
+          top: -30px;
+          transition: 1.5s; }
       .container .grid .item .description-text {
         font-family: 'Noto Sans', sans-serif;
         color: #757575; }
@@ -399,6 +400,8 @@ header {
         max-width: 40px; }
     .container .grid.fadeIn .item {
       opacity: 1; }
+      .container .grid.fadeIn .item h3::before {
+        width: 70px; }
 
 #portfolio {
   display: flex;

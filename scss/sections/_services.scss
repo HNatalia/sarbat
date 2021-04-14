@@ -38,10 +38,11 @@
         &::before {
           position: absolute;
           content: '';
-          width: 70px;
+          width: 0px;
           height: 2px;
           background-color: $gray-color;
           top: -30px;
+          transition: 1.5s;
         }
       }
 
@@ -60,6 +61,12 @@
     &.fadeIn {
       .item {
         opacity: 1;
+
+        h3 {
+          &::before {
+            width: 70px;
+          }
+        }
       }
     }
   }

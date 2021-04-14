@@ -1,9 +1,10 @@
 (() => {
-  const body = document.querySelector('body');
-  const loader = document.querySelector('.loader-container');
-  const page = document.querySelector('.page');
 
   const loaded = () => {
+    const body = document.querySelector('body');
+    const loader = document.querySelector('.loader-container');
+    const page = document.querySelector('.page');
+
     setTimeout(() => {
       page.classList.add('fadeIn');
       loader.style.display = 'none';
@@ -11,11 +12,12 @@
     }, 2700)
   }
 
-  const menuList = document.querySelector('.menu-list');
-  const menu = document.querySelector('.menu');
-  const hamburger = document.querySelector('.line');
-
   const toggle = () => { 
+    const menuList = document.querySelector('.menu-list');
+    const menu = document.querySelector('.menu');
+    const hamburger = document.querySelector('.line');
+    const li = menuList.querySelectorAll('li');
+
     menu.addEventListener('click', () => {
       if (hamburger.classList.contains('close')) {
         hamburger.classList.remove('close');
@@ -25,12 +27,19 @@
         menuList.classList.add('open');
       }
     });
+
+    li.forEach(el => {
+      el.addEventListener('click', () => {
+        hamburger.classList.remove('close');
+        menuList.classList.remove('open');
+      });
+    });
   }
 
   const fadeIn = selector => {
     const container = document.querySelector(selector);
     const size = container.getBoundingClientRect().top;
-    const scrollPosition = window.innerHeight * 0.5;
+    const scrollPosition = window.innerHeight;
 
     if (scrollPosition > size) {
       container.classList.add('fadeIn');
@@ -80,9 +89,9 @@
     carousel();
 
     window.addEventListener('scroll', () => {
-      fadeIn('.grid');
-      fadeIn('.wrapper');
-      fadeIn('.cards-wrapper');
+      fadeIn('#services .grid');
+      fadeIn('#process .wrapper');
+      fadeIn('#prices .cards-wrapper');
       fadeIn('#skills .wrapper');
     })
   })
