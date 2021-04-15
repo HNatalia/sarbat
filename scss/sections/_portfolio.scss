@@ -2,7 +2,7 @@
   @include flex-center;
   flex-direction: column;
 
-  .grid {
+  .grid, .addedGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(18, 1fr);
@@ -11,10 +11,10 @@
     height: 600px;
     @media screen and (max-width: 720px) {
       grid-template-columns: repeat(2, 1fr);
+      height: 1000px;
     }
   
     .picture {
-      background-image: url('../assets/img/lorempic.png');
       position: relative;
       @include bg-cover;
   
@@ -87,56 +87,175 @@
           grid-column: 2 / 3;
         }
       }
-  
-      .hover {
+
+      &::after {
         position: absolute;
-        background-image: url('../assets/img/pt-img-bg.png');
+        content: '';
         width: 100%;
-        bottom: 0;
-        padding: 27px 27px 15px;
-        @include flex-center;
-        flex-direction: column;
-        opacity: 0;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .4);
         transition: 1s;
-  
-        h4 {
-          color: $font-color;
-          text-align: center;
-          margin-bottom: 25px;
-          position: relative;
-  
-          &::after {
-            position: absolute;
-            content: '';
-            width: 60%;
-            height: 2px;
-            background-color: $font-color;
-            bottom: -35%;
-            left: 20%;
-          }
-        }
-  
-        a {
-          color: $font-color;
-          text-transform: uppercase;
-          font-size: 10px;
-        }
+      }
+    }
+  }
 
+  .addedGrid {
+    margin-top: -132px;
+    display: none;
+    @media screen and (max-width: 720px) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 0;
+    }
+
+    .addedPicture {
+      position: relative;
+      @include bg-cover;
+
+      &:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 5 / 12;
         @media screen and (max-width: 720px) {
-          opacity: 1;
-          padding: 10px;
-
-          h4 {
-            font-size: 12px;
-            margin-bottom: 10px;
-          }
-          
+          grid-row: 1 / 4;
         }
       }
-  
-      &:hover .hover {
-        opacity: 1;
+
+      &:nth-child(2) {
+        grid-row: 3 / 11;
+        grid-column: 2 / 3;
+        @media screen and (max-width: 720px) {
+          grid-row: 1 / 5;
+        }
       }
+
+      &:nth-child(3) {
+        grid-row: 1 / 10;
+        @media screen and (max-width: 720px) {
+          grid-row: 4 / 7;
+          grid-column: 1 / 2;
+        }
+      }
+
+      &:nth-child(4) {
+        grid-row: 2 / 11;
+        @media screen and (max-width: 720px) {
+          grid-row: 5 / 9;
+          grid-column: 2 / 3;
+        }
+      }
+
+      &:nth-child(5) {
+        grid-row: 5 / 12;
+        @media screen and (max-width: 720px) {
+          grid-row: 7 / 10;
+          grid-column: 1 / 2;
+        }
+      }
+
+      &:nth-child(6) {
+        grid-row: 12 / 19;
+        @media screen and (max-width: 720px) {
+          grid-row: 9 / 12;
+          grid-column: 2 / 3;
+        }
+      }
+
+      &:nth-child(7) {
+        grid-row: 11 / 19;
+        @media screen and (max-width: 720px) {
+          grid-row: 10 / 15;
+          grid-column: 1 / 2;
+        }
+      }
+
+      &:nth-child(8) {
+        grid-row: 10 / 19;
+        @media screen and (max-width: 720px) {
+          grid-row: 12 / 16;
+          grid-column: 2 / 3;
+        }
+      }
+
+      &:nth-child(9) {
+        grid-row: 11 / 19;
+        @media screen and (max-width: 720px) {
+          grid-row: 15 / 19;
+          grid-column: 1 / 2;
+        }
+      }
+
+      &:nth-child(10) {
+        grid-row: 12 / 19;
+        @media screen and (max-width: 720px) {
+          grid-row: 16 / 19;
+          grid-column: 2 / 3;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .4);
+        transition: 1s;
+      }
+    }
+  }
+
+  .picture, .addedPicture {
+    .hover {
+      position: absolute;
+      background-image: url('../assets/img/pt-img-bg.png');
+      width: 100%;
+      bottom: 0;
+      padding: 27px 27px 15px;
+      @include flex-center;
+      flex-direction: column;
+      opacity: 0;
+      transition: 1s;
+      z-index: 1;
+
+      h4 {
+        color: $font-color;
+        text-align: center;
+        margin-bottom: 25px;
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: '';
+          width: 60%;
+          height: 2px;
+          background-color: $font-color;
+          bottom: -35%;
+          left: 20%;
+        }
+      }
+
+      a {
+        color: $font-color;
+        text-transform: uppercase;
+        font-size: 10px;
+      }
+
+      @media screen and (max-width: 720px) {
+        opacity: 1;
+        padding: 10px;
+
+        h4 {
+          font-size: 12px;
+          margin-bottom: 10px;
+        }
+        
+      }
+    }
+
+    &:hover::after {
+      background-color: transparent;
+    }
+
+    &:hover .hover {
+      opacity: 1;
     }
   }
 
