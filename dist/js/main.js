@@ -2,7 +2,7 @@
   const loaded = () => {
     const body = document.querySelector('body');
     const loader = document.querySelector('.loader-container');
-    const page = document.querySelector('#page');
+    const page = document.querySelector('.page');
 
     setTimeout(() => {
       page.classList.add('fadeIn');
