@@ -11,7 +11,25 @@
     
       .skill {
         transition: 1s;
-        opacity: 0;
+        opacity: 1;
+
+        &:nth-child(1) .progress-line {
+          stroke-dasharray: 138px;
+          stroke-dashoffset: -138px;
+          animation: move 2s;
+        }
+
+        @keyframes move {
+          from {
+            stroke-dasharray: 138px;
+            stroke-dashoffset: -138px;
+          }
+
+          to {
+            stroke-dasharray: 400px;
+            stroke-dashoffset: calc(400px - (400px * 70) / 100);
+          }
+        }
 
         h3 {
           color: $font-color;

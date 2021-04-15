@@ -183,6 +183,24 @@
     });
   }
 
+  const testimonialsApi = () => {
+    const personImg = document.querySelectorAll('#testimonials .picture img');
+    const personName = document.querySelectorAll('#testimonials .name');
+    
+    fetch ('https://api.unsplash.com/collections/11521863/photos/?client_id=3g46TwjtuNPducXJTv7jO5BDjzNALqBZANYCMLQ4-Dc') 
+      .then(request => request.json())
+      .then(data => {
+        console.log(data)
+        personImg.forEach((el, index) => {
+          el.src = data[index].urls.small;
+        });
+
+        personName.forEach((el, index) => {
+          el.textContent += data[index].user.name; 
+        })
+      });
+  }
+
 
   // acsess key: 3g46TwjtuNPducXJTv7jO5BDjzNALqBZANYCMLQ4-Dc
   // secret key: ZrAJBWAROl_E9BvTrcIBAoRU5A4YvK0q-QA4CgcF7oI
@@ -192,12 +210,13 @@
     toggle();
     portfolio();
     carousel();
+    testimonialsApi();
 
     window.addEventListener('scroll', () => {
       fadeIn('#services .grid');
       fadeIn('#process .wrapper');
       fadeIn('#prices .cards-wrapper');
-      fadeIn('#skills .wrapper');
+      // fadeIn('#skills .wrapper');
     })
   })
 })();

@@ -875,7 +875,19 @@ header {
       justify-content: space-between; }
       #skills .container .wrapper .skill {
         transition: 1s;
-        opacity: 0; }
+        opacity: 1; }
+        #skills .container .wrapper .skill:nth-child(1) .progress-line {
+          stroke-dasharray: 138px;
+          stroke-dashoffset: -138px;
+          animation: move 2s; }
+
+@keyframes move {
+  from {
+    stroke-dasharray: 138px;
+    stroke-dashoffset: -138px; }
+  to {
+    stroke-dasharray: 400px;
+    stroke-dashoffset: calc(400px - (400px * 70) / 100); } }
         #skills .container .wrapper .skill h3 {
           color: #f7f7f7; }
         #skills .container .wrapper .skill .level {
@@ -928,16 +940,18 @@ header {
               display: flex;
               align-items: center;
               width: 50vw; }
-              @media screen and (max-width: 390px) {
+              @media screen and (max-width: 720px) {
                 #testimonials .container .wrapper .viewport .items .review-page .review {
-                  flex-direction: column; } }
+                  flex-direction: column;
+                  text-align: center; } }
               #testimonials .container .wrapper .viewport .items .review-page .review .picture img {
+                object-fit: cover;
                 width: 100px;
                 height: 100px;
                 border-radius: 50%;
                 margin-bottom: 15px;
                 margin-right: 30px; }
-                @media screen and (max-width: 390px) {
+                @media screen and (max-width: 720px) {
                   #testimonials .container .wrapper .viewport .items .review-page .review .picture img {
                     margin-right: 0; } }
               #testimonials .container .wrapper .viewport .items .review-page .review .picture .divider {
@@ -952,6 +966,13 @@ header {
                   margin-bottom: 30px; }
                 #testimonials .container .wrapper .viewport .items .review-page .review .info .name {
                   font-weight: 600; }
+                @media screen and (max-width: 580px) {
+                  #testimonials .container .wrapper .viewport .items .review-page .review .info h4 {
+                    font-size: 14px; }
+                  #testimonials .container .wrapper .viewport .items .review-page .review .info p {
+                    font-size: 11px;
+                    margin-top: 10px;
+                    margin-bottom: 20px; } }
 
 .wrapper .post {
   display: flex;
