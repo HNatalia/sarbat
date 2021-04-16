@@ -53,12 +53,12 @@
     let index = 0;
 
     const switchPage = index => {
-      items.style.transform = `translateX(-${100 * index}%)`;
+      items.style.transform = `translateX(-${(100 * index) % pages.length}00%)`;
     }
 
     btnRight.addEventListener('click', () => {
       if (index > pages.length - 2) {
-        return;
+        switchPage(index);
       }
 
       switchPage(index + 1);
@@ -67,7 +67,7 @@
 
     btnLeft.addEventListener('click', () => {
       if (index === 0) {
-        return;
+        switchPage(pages.length - 1);
       }
 
       switchPage(index - 1);
