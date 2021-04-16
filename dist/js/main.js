@@ -128,7 +128,6 @@
       fetch ('https://api.unsplash.com/collections/1270212/photos/?page=2;client_id=3g46TwjtuNPducXJTv7jO5BDjzNALqBZANYCMLQ4-Dc') 
       .then(request => request.json())
       .then(data => {
-        console.log(data)
         addedGrid.style.display = 'grid';
 
         for (let i = 0; i < 10; i++) {
@@ -190,7 +189,6 @@
     fetch ('https://api.unsplash.com/collections/11521863/photos/?client_id=3g46TwjtuNPducXJTv7jO5BDjzNALqBZANYCMLQ4-Dc') 
       .then(request => request.json())
       .then(data => {
-        console.log(data)
         personImg.forEach((el, index) => {
           el.src = data[index].urls.small;
         });
@@ -201,9 +199,25 @@
       });
   }
 
+  const getFormData = () => {
+    const inputs = Array.from(document.querySelectorAll('form input'));
+    const message = document.querySelector('form textarea');
+    const contactBtn = document.querySelector('form button');
+    
+    contactBtn.addEventListener('click', e => {
+      e.preventDefault(); 
 
-  // acsess key: 3g46TwjtuNPducXJTv7jO5BDjzNALqBZANYCMLQ4-Dc
-  // secret key: ZrAJBWAROl_E9BvTrcIBAoRU5A4YvK0q-QA4CgcF7oI
+      const dataValues = [...inputs, message];
+    
+      const data = dataValues
+        .reduce((acc, input) => ({
+          ...acc,
+          [input.id]: input.value
+        }), {});
+      
+      console.log('Submit data:', data)
+    });
+  };
 
   document.addEventListener('DOMContentLoaded', () => {
     loaded();
@@ -211,6 +225,7 @@
     portfolio();
     carousel();
     testimonialsApi();
+    getFormData();
 
     window.addEventListener('scroll', () => {
       fadeIn('#services .grid');
